@@ -3,6 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import querystring from 'query-string'
+
+const search = querystring.parse(window.location.search)
+
+if ('access_token' in search) {
+  window.access_token = search.access_token
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
