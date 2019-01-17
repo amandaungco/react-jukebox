@@ -23,27 +23,21 @@ class SongList extends Component {
       return (
 
         <li className='user-song-item' key={ i }>
-
             <p className='add-song'>
               <i className="fa fa-check" aria-hidden="true"/>
             </p>
-
             <div className='song-title'>
               <p>{ song.name }</p>
             </div>
-
             <div className='song-artist'>
               <p>{ song.artists[0].name }</p>
             </div>
-
             <div className='song-album'>
               <p>{ song.album.name }</p>
             </div>
-
             <div className='song-added'>
               <p>{ moment(song.added_at).format('YYYY-MM-DD')}</p>
             </div>
-
             <div className='song-length'>
               <p>{ this.msToMinutesAndSeconds(song.duration_ms) }</p>
             </div>

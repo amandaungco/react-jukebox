@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import './PlaylistList.css';
+import TracksView from './TracksView'
 const URL = "http://127.0.0.1:8000/";
 
 class PlaylistList extends Component {
@@ -78,7 +79,7 @@ class PlaylistList extends Component {
       //     });
       // }
       return (
-        <tr key={ playlist.id }>
+        <tr onClick= {() => this.props.getPlaylistSongs(playlist)} key={ playlist.id }>
         { (playlist.images[0] !== undefined) ?
           <th scope="row"><img src={playlist.images[0].url} alt="Album Artwork"/></th> :
           <th scope="row"></th>
@@ -100,7 +101,7 @@ class PlaylistList extends Component {
       <div className='user-playlist-container'>
         <h3 className='user-playlist-header'>Playlists</h3>
         {this.state.isReady &&
-          <table class="table table-hover table-dark">
+          <table className="table table-hover table-dark">
 
             <thead>
               <tr>
@@ -125,6 +126,7 @@ class PlaylistList extends Component {
 }
 
 PlaylistList.propTypes = {
+  getPlaylistSongs: PropTypes.func,
 
 };
 

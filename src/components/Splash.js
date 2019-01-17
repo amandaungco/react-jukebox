@@ -26,7 +26,7 @@ class Splash extends Component {
     return (
       <div>
         <h1>Splash Page</h1>
-        <a href="http://127.0.0.1:8000/callback/">Host Party</a>
+        <button className="button"><a href="http://127.0.0.1:8000/callback/">Host Party</a></button>
         <button onClick={this.onClickJoinRoom} className="button" type="button">Join Party</button>
       </div>
     );
