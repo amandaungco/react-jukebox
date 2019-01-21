@@ -109,10 +109,13 @@ class App extends Component {
           <div className='header'>
             <SearchBar onSearchSubmitCallback={this.onSearchSubmit} />
           </div>
-          // <h1>{name}</h1>
+          <h1>{name}</h1>
           <ul>
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/splash/">Splash</Link>
             </li>
             <li>
               <Link to="/playlist/">Playlists</Link>
