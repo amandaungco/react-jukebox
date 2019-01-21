@@ -20,7 +20,7 @@ class TracksView extends Component {
           <td>{song.name}</td>
           <td>{ song.artists[0].name }</td>
           <td>{ song.album.name}</td>
-          <td>{ moment(song.added_at).format('YYYY-MM-DD')}</td>
+          <td className="d-none d-sm-table-cell">{ moment(song.added_at).format('YYYY-MM-DD')}</td>
           <td>{ this.msToMinutesAndSeconds(song.duration_ms)}</td>
         </tr>
       );
@@ -37,7 +37,7 @@ class TracksView extends Component {
               <th scope="col">Title</th>
               <th scope="col">Artist</th>
               <th scope="col">Album</th>
-              <th scope="col"><i className="fa fa-calendar-plus-o" aria-hidden="true"/></th>
+              <th scope="col" className="d-none d-sm-table-cell"><i className="fa fa-calendar-plus-o" aria-hidden="true"/></th>
               <th scope="col"><i className="fa fa-clock-o" aria-hidden="true" /></th>
             </tr>
           </thead>

@@ -50,34 +50,8 @@ class PlaylistList extends Component {
 
 
   renderPlaylists() {
-    // const playlists = this.getPlaylists()
     return this.state.playlistList.map(playlist => {
-      // const getPlaylistSongs = (id) => {
-      //   console.log(id);
-      //   axios.get(URL + "playlist/", {
-      //     withCredentials: true,
-      //     params: {
-      //       playlist_id: id, // value.q,
-      //     },
-      //     headers: {'X-spotify-token': 'BQDpHI3z5kwrRIe7vVQ9-RdiGeTG2pSEqDqiEoILzI_deBHf1mkxWgU1kx5UxhabPH6iSNbSHPwdsAOvovLBgBnz7K4qcfvo8tU42ykf0Jocbso4v5UA37LEyMNyS80zY30U8mOd4i0qM0v5Yuq7VRd5xSXrdkqCsVd-AwtlfY86eYsSrSkfP76Q5Z7H'},
-      //   }
-      //     )
-      //     .then((response) => {
-      //       const songs = response.data.items.map((song) => {
-      //           return { ...song }
-      //         });
-      //
-      //       this.setState({
-      //         songs: songs,
-      //       });
-      //       console.log(songs);
-      //     })
-      //     .catch((error) => {
-      //       this.setState({
-      //         errorMessage: error.message,
-      //       });
-      //     });
-      // }
+
       return (
         <tr onClick= {() => this.props.getPlaylistSongs(playlist)} key={ playlist.id }>
         { (playlist.images[0] !== undefined) ?

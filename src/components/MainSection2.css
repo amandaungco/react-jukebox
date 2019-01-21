@@ -47,11 +47,6 @@
 	display: flex;
 }
 
-.current-artist-image {
-	width: 180px;
-	height: 180px;
-	border-radius: 50%;
-}
 
 .current-artist-info {
 	display: flex;
@@ -71,13 +66,6 @@
 	margin-left: 40px;
 }
 
-col-2 {
-  text-align: center;
-}
-
-p {
-  margin-bottom: 0px
-}
 
 .btn.btn-green {
     background-color: #1db954;
@@ -105,7 +93,7 @@ p {
     touch-action: manipulation;
     background-image: none;
     border: 0;
-    border-radius: 500px;
+    border-radius: 3.25rem;
     padding: 13px;
     min-width: 130px;
     white-space: normal;
@@ -118,16 +106,15 @@ p {
     user-select: none;
   }
 
-div.TrackListHeader {
-    margin: 0 0 20px;
-    max-width: 100%;
-    padding-bottom: 20px;
+div.trackList_Header {
+
     border-bottom: 1px solid hsla(0,0%,100%,.1);
-
 }
 
-.TrackListHeader__body {
-    text-align: initial;
-    width: 70%;
-    margin: 0 40px;
+img #playlist-art {
+  height: 100%;
 }
+/* div.TracklistHeader {
+  display:inline-block;
+  height: 100%;
+} */

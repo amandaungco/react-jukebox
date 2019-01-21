@@ -24,7 +24,7 @@ class SongList extends Component {
 
         <li className='user-song-item' key={ i }>
             <p className='add-song'>
-              <i className="fa fa-check" aria-hidden="true"/>
+              <i className="fa fa-plus" aria-hidden="true"/>
             </p>
             <div className='song-title'>
               <p>{ song.name }</p>
