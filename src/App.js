@@ -94,7 +94,7 @@ class App extends Component {
 
 
   render() {
-    const Splash = () => <Splash />;
+    const Index = () => <h2>Home</h2>;
     const Playlist = () => <PlaylistList getPlaylistSongs = {(playlist) => this.getPlaylistSongs(playlist)}/>;
 
     // const playlistTracks = this.state.playlistSongs.map((track) => {
@@ -112,7 +112,7 @@ class App extends Component {
           // <h1>{name}</h1>
           <ul>
             <li>
-              <Link to="/">Splash</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/playlist/">Playlists</Link>
@@ -125,7 +125,8 @@ class App extends Component {
               songs={this.state.playlistSongs}
             />
           </div>
-          <Route path="/" exact component={Splash} />
+          <Route path="/" exact component={Index} />
+          <Route path="/splash/" component={Splash} />
           <Route path="/playlist/" component={Playlist} />
         </div>
       </Router>
