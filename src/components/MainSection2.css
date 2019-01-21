@@ -72,7 +72,7 @@
     padding: 11px 44px;
 }
 
-.btn {
+button.btn {
     font-size: 11px;
     line-height: 16px;
     letter-spacing: .015em;
@@ -85,7 +85,6 @@
     -webkit-transition-property: all;
     transition-property: all;
     color: #fff;
-    margin-top: 16px;
     display: inline-block;
     margin-bottom: 0;
     text-align: center;
@@ -111,8 +110,8 @@ div.trackList_Header {
     border-bottom: 1px solid hsla(0,0%,100%,.1);
 }
 
-img #playlist-art {
-  height: 100%;
+img.playlist-art {
+  width: 100%;
 }
 /* div.TracklistHeader {
   display:inline-block;

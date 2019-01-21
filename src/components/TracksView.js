@@ -18,10 +18,10 @@ class TracksView extends Component {
         <tr key={ i }>
           <th scope="row"><i className="fa fa-check" aria-hidden="true"/></th>
           <td>{song.name}</td>
-          <td>{ song.artists[0].name }</td>
-          <td>{ song.album.name}</td>
-          <td className="d-none d-sm-table-cell">{ moment(song.added_at).format('YYYY-MM-DD')}</td>
-          <td>{ this.msToMinutesAndSeconds(song.duration_ms)}</td>
+          <td>{song.artists[0].name}</td>
+          <td>{song.album.name}</td>
+          <td className="d-none d-sm-table-cell">{moment(song.added_at).format('YYYY-MM-DD')}</td>
+          <td>{this.msToMinutesAndSeconds(song.duration_ms)}</td>
         </tr>
       );
     });
@@ -53,7 +53,8 @@ class TracksView extends Component {
 
 TracksView.propTypes = {
   viewType: PropTypes.string,
-  songs: PropTypes.array
+  songs: PropTypes.array,
+  playlist: PropTypes.object,
 };
 
 export default TracksView

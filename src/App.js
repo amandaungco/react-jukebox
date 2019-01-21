@@ -21,10 +21,12 @@ class App extends Component {
     super(props);
 
     this.state = {
+      currentPlaylist: '',
       songList: [],
       playlistList: [],
       playlistSongs: [],
       viewType: '',
+      roomCode:'',
     };
 
   }
@@ -74,16 +76,17 @@ class App extends Component {
     }
       )
       .then((response) => {
-        console.log(response.data.items);
         const songs = response.data.items.map((song) => {
             return { ...song.track }
           });
-
         this.setState({
+          currentPlaylist: {...playlist},
           playlistSongs: songs,
           playlistList: [],
           songList: [],
         });
+        console.log('was the state set?');
+        console.log(this.state.currentPlaylist);
       })
       .catch((error) => {
         this.setState({
@@ -91,6 +94,33 @@ class App extends Component {
         });
       });
   }
+
+  setPlaylist = (playlist) => {
+    axios.post(URL + "playlist_save/",
+      {
+        playlistId: playlist.id, // value.q,
+      }  ,
+      {
+      withCredentials: true,
+      headers: {'X-spotify-token': window.access_token,
+                'Content-Type': 'application/json'},
+      }
+      )
+      .then((response) => {
+        const playlistDB = response.data
+        this.setState({
+          roomCode: playlistDB.room_code,
+        });
+
+      })
+      .catch((error) => {
+        this.setState({
+          errorMessage: error.message,
+        });
+      });
+  }
+
+
 
 
   render() {
@@ -120,8 +150,12 @@ class App extends Component {
             <li>
               <Link to="/playlist/">Playlists</Link>
             </li>
+            <li>
+              {this.state.roomCode}
+            </li>
           </ul>
-            <MainSection2 viewType= {'playlist'}/>
+            {console.log(typeof(this.state.currentPlaylist))}
+            {typeof(this.state.currentPlaylist) !== 'object' ? (null) : (<MainSection2 playlist={this.state.currentPlaylist} setPlaylist = {(playlist) => this.setPlaylist(playlist)} />)}
            {this.state.songList.length === 0 ? (null): (<TracksView songs={this.state.songList}/>)}
           <div>
             <TracksView

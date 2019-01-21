@@ -21,8 +21,6 @@ class PlaylistList extends Component {
   }
 
   componentDidMount() {
-    console.log("Mounted");
-
     axios.get(URL + "playlists/", {
       withCredentials: true,
       headers: {'X-spotify-token': window.access_token},
@@ -55,7 +53,7 @@ class PlaylistList extends Component {
       return (
         <tr onClick= {() => this.props.getPlaylistSongs(playlist)} key={ playlist.id }>
         { (playlist.images[0] !== undefined) ?
-          <th scope="row"><img src={playlist.images[0].url} alt="Album Artwork"/></th> :
+          <th scope="row"><img src={playlist.images[0].url} alt="Album Artwork" className='playlist-icon'/></th> :
           <th scope="row"></th>
         }
           <td>{ playlist.name }</td>
@@ -76,7 +74,6 @@ class PlaylistList extends Component {
         <h3 className='user-playlist-header'>Playlists</h3>
         {this.state.isReady &&
           <table className="table table-hover table-dark">
-
             <thead>
               <tr>
                 <th scope="col"></th>
@@ -84,23 +81,19 @@ class PlaylistList extends Component {
                 <th scope="col">Tracks</th>
               </tr>
             </thead>
-
             <tbody>
               {this.renderPlaylists()}
             </tbody>
-
           </table>
         }
       </div>
-      // <div>
-      //   {this.state.isReady ? this.renderPlaylists() : <div>Not Ready</div>}
-      // </div>
     );
   }
 }
 
 PlaylistList.propTypes = {
   getPlaylistSongs: PropTypes.func,
+  getPlaylist: PropTypes.func,
 
 };
 
