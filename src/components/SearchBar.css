@@ -1,6 +1,5 @@
 .track-search-container {
-	position: relative;
-	top: 10px;
+	padding: 1em;
 }
 
 .track-search-container input {
@@ -19,6 +18,13 @@
 	cursor: pointer;
   color: white;
   font-size: 15px;
+}
+
+#search{
+  background-image: url(https://image.flaticon.com/icons/svg/149/149852.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
 }
 
 button {

@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import querystring from 'query-string'
-
+import 'material-components-web'
 const search = querystring.parse(window.location.search)
 
 if ('access_token' in search) {

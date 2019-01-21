@@ -1,12 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-body,
-p,
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-}
 
 *{
   font-family: 'Montserrat', Georgia, sans-serif;
@@ -14,11 +6,11 @@ h3 {
 
 body {
     font-family: 'Montserrat', Georgia, sans-serif;
-    background: rgb(24, 24, 24);
-    color: #fff;
+    background: rgb(24, 24, 24) !important;
+    color: #fff !important;
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0;
+    margin: 0 auto !important;
+    padding: 0 !important;
 }
 
 .app-container {
@@ -26,13 +18,14 @@ body {
   position: relative;
 }
 
-.left-side-section {
+/*----HEADER------*/
+.header {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  bottom: 10px;
-  width: 180px;
-  overflow-y: auto;
+  width: 100%;
+  z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	background: rgb(24, 24, 24);
 }
 
 .main-section {

@@ -25,10 +25,14 @@ class Splash extends Component {
   render() {
     return (
       <div>
-        <h1>Splash Page</h1>
-        <button className="button"><a href="http://127.0.0.1:8000/callback/">Host Party</a></button>
-        <button onClick={this.onClickJoinRoom} className="button" type="button">Join Party</button>
+        <div className= 'row justify-content-center'>
+          <button className="button"><a className= "button" href="http://127.0.0.1:8000/callback/">Host Party</a></button>
+        </div>
+        <div className= 'row justify-content-center'>
+          <button onClick={this.onClickJoinRoom} className="button" type="button">Join Party</button>
+        </div>
       </div>
+
     );
   }
 }

@@ -1,0 +1,133 @@
+.browse-headers {
+  display: flex;
+}
+
+.browse-headers p {
+  color: rgb(179, 179, 179);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.browse-headers p:first-child {
+  margin: 0 20px 0 0;
+}
+
+.browse-headers p:hover {
+  color: #fff;
+}
+
+.created-by {
+  font-size: .25em;
+  color: #aaa;
+  padding: 8px 0;
+  margin-bottom: 0px;
+}
+
+.header-title {
+  font-size: 1em;
+  padding: 3px 0 5px 0;
+  margin: 0px;
+}
+
+
+.browse-headers .active:after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  left: 50%;
+  top: 22px;
+  border-bottom: 2px solid #1db954;
+  transform: translate(-50%, -50%);
+}
+
+.current-artist-header-container {
+	display: flex;
+}
+
+.current-artist-image {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+}
+
+.current-artist-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20px;
+}
+
+.current-artist-info p {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.artist-button {
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+col-2 {
+  text-align: center;
+}
+
+p {
+  margin-bottom: 0px
+}
+
+.btn.btn-green {
+    background-color: #1db954;
+    padding: 11px 44px;
+}
+
+.btn {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: .015em;
+    font-weight: bold;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    -webkit-transition: none 33ms cubic-bezier(.3,0,.7,1);
+    transition: none 33ms cubic-bezier(.3,0,.7,1);
+    -webkit-transition-property: all;
+    transition-property: all;
+    color: #fff;
+    margin-top: 16px;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    background-image: none;
+    border: 0;
+    border-radius: 500px;
+    padding: 13px;
+    min-width: 130px;
+    white-space: normal;
+    will-change: transform;
+    line-height: 1.6;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+div.TrackListHeader {
+    margin: 0 0 20px;
+    max-width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+
+}
+
+.TrackListHeader__body {
+    text-align: initial;
+    width: 70%;
+    margin: 0 40px;
+}

@@ -14,45 +14,47 @@ class SearchBar extends Component {
       type: 'track',
     };
 
-    this.handleTypeChange = this.handleTypeChange.bind(this);
-    this.onSearchSubmit = this.onSearchSubmit.bind(this);
+    // this.handleTypeChange = this.handleTypeChange.bind(this);
+    // this.onSearchSubmit = this.onSearchSubmit.bind(this);
   }
   handleTypeChange = (event) => {
     this.setState({
       type: event.target.value,
     });
-    console.log(this.state.type);
   }
 
   handleSearchChange = (event) => {
     this.setState({
       searchValue: event.target.value,
     });
-    console.log(this.state.searchValue);
   }
 
   onSearchSubmit = (event) => {
-    console.log(event)
     event.preventDefault()
     this.props.onSearchSubmitCallback(this.state);
-
   }
 
 
 
   render() {
     return (
-      <section className='track-search-container'>
+      <div className='track-search-container'>
         <form onSubmit={this.onSearchSubmit}>
-        <input
-          onChange={this.handleSearchChange}
-          value={this.state.searchValue}
-          name="searchValue"
-          className="search-bar cu-search-input"
-          placeholder="Search..."
-        />
+
+            <input
+              onChange={this.handleSearchChange}
+              value={this.state.searchValue}
+              name="searchValue"
+              className="search-bar cu-search-input"
+              placeholder="Search..."
+              id ="Search"
+            />
+
+
+        {/*
         <div className="form-group">
           <label forhtml="search-type">Type</label>
+
           <select className="form-control" id="type" value={this.state.type} onChange={this.handleTypeChange}>
 
             <option value="track">Track</option>
@@ -60,11 +62,15 @@ class SearchBar extends Component {
             <option value="album">Album</option>
             <option value="playlist">Playlist</option>
 
-          </select>
+          </select> }
+
         </div>
-        <input type="submit" value="Submit" />
+        */}
+          <button onClick={this.onSearchSubmit}>
+            <i className="fa fa-search search" aria-hidden="true"/>
+          </button>
         </form>
-      </section>
+      </div>
     );
   }
 }

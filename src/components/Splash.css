@@ -12,7 +12,7 @@ button.button {
     border-radius:100px;
 
     padding: .3em 1.2em;
-    margin:5px;
+    margin:1em;
 
     background-size: 200% 100%;
     background-image: linear-gradient(to right, transparent 50%, rgba(28, 190, 131, 1) 50%);
@@ -24,4 +24,15 @@ button.button:hover{
     background-color:rgba(28, 190, 131, 1);
     background-position: -100% 100%;
     cursor: pointer;
+}
+
+a.button:hover{
+  color:rgba(255, 255, 255, 1) !important;
+  background-color:rgba(28, 190, 131, 1);
+  background-position: -100% 100%;
+  cursor: pointer;
+}
+
+a.button {
+  color: rgba(28, 190, 131, 1);
 }

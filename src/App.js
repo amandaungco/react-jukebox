@@ -5,6 +5,7 @@ import SongList from './components/SongList';
 import PlaylistList from './components/PlaylistList';
 import Splash from './components/Splash';
 import TracksView from './components/TracksView';
+import MainSection2 from './components/MainSection2'
 import axios from 'axios';
 import moment from 'moment';
 
@@ -21,25 +22,17 @@ class App extends Component {
 
     this.state = {
       songList: [],
-      playlistList: '',
+      playlistList: [],
       playlistSongs: [],
+      viewType: '',
     };
 
   }
-
-  // const Main = ({children}) => {
-  //     return (
-  //         <div>
-  //             {children}
-  //         </div>
-  //     );
-  // };
 
 
   onSearchSubmit = (value) => {
     this.getSearch(value);
   }
-
 
   getSearch = (value) => {
     console.log(value);
@@ -58,7 +51,9 @@ class App extends Component {
           });
 
         this.setState({
-          songList: songs
+          songList: songs,
+          playlistList: [],
+          playlistSongs: [],
         });
 
         console.log(songs);
@@ -86,6 +81,8 @@ class App extends Component {
 
         this.setState({
           playlistSongs: songs,
+          playlistList: [],
+          songList: [],
         });
       })
       .catch((error) => {
@@ -95,15 +92,11 @@ class App extends Component {
       });
   }
 
-  msToMinutesAndSeconds(ms) {
-    const minutes = Math.floor(ms / 60000);
-    const seconds = ((ms % 60000) / 1000).toFixed(0);
-    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-  }
 
   render() {
-    const Index = () => <h2>Home</h2>;
+    const Splash = () => <Splash />;
     const Playlist = () => <PlaylistList getPlaylistSongs = {(playlist) => this.getPlaylistSongs(playlist)}/>;
+
     // const playlistTracks = this.state.playlistSongs.map((track) => {
     //   console.log(track)
     //   return
@@ -112,29 +105,27 @@ class App extends Component {
     let name = "Jukebox"
     return (
       <Router>
-
         <div className="App .bg-dark">
-          <h1>{name}</h1>
+          <div className='header'>
+            <SearchBar onSearchSubmitCallback={this.onSearchSubmit} />
+          </div>
+          // <h1>{name}</h1>
           <ul>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/splash/">Splash</Link>
+              <Link to="/">Splash</Link>
             </li>
             <li>
               <Link to="/playlist/">Playlists</Link>
             </li>
           </ul>
-          <SearchBar onSearchSubmitCallback={this.onSearchSubmit} />
-          <TracksView songs={this.state.songList}/>
+            <MainSection2 viewType= {'playlist'}/>
+           {this.state.songList.length === 0 ? (null): (<TracksView songs={this.state.songList}/>)}
           <div>
             <TracksView
               songs={this.state.playlistSongs}
             />
           </div>
-          <Route path="/" exact component={Index} />
-          <Route path="/splash/" component={Splash} />
+          <Route path="/" exact component={Splash} />
           <Route path="/playlist/" component={Playlist} />
         </div>
       </Router>

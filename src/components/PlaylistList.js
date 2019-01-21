@@ -37,7 +37,7 @@ class PlaylistList extends Component {
           playlistList: playlists,
           isReady: true
         });
-
+        console.log(this.state.playlistList);
       })
       .catch((error) => {
         this.setState({
