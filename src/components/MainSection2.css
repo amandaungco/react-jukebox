@@ -112,6 +112,8 @@ div.trackList_Header {
 
 img.playlist-art {
   width: 100%;
+  max-width: 12em;
+
 }
 /* div.TracklistHeader {
   display:inline-block;

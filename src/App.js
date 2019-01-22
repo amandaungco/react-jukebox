@@ -6,6 +6,7 @@ import PlaylistList from './components/PlaylistList';
 import Splash from './components/Splash';
 import TracksView from './components/TracksView';
 import MainSection2 from './components/MainSection2'
+import RoomForm from './components/RoomForm'
 import axios from 'axios';
 import moment from 'moment';
 
@@ -120,6 +121,26 @@ class App extends Component {
       });
   }
 
+  addSong = (song) => {
+    console.log(song)
+    axios.get(URL + "add_track/", {
+      withCredentials: true,
+      params: {
+        track_id: song.id,
+        room_code: this.state.roomCode // value.q,
+      },
+    }
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        this.setState({
+          errorMessage: error.message,
+        });
+      });
+  }
+
 
 
 
@@ -154,14 +175,14 @@ class App extends Component {
               {this.state.roomCode}
             </li>
           </ul>
-            {console.log(typeof(this.state.currentPlaylist))}
             {typeof(this.state.currentPlaylist) !== 'object' ? (null) : (<MainSection2 playlist={this.state.currentPlaylist} setPlaylist = {(playlist) => this.setPlaylist(playlist)} />)}
-           {this.state.songList.length === 0 ? (null): (<TracksView songs={this.state.songList}/>)}
+           {this.state.songList.length === 0 ? (null): (<TracksView songs={this.state.songList} addSong={(song) => this.addSong(song)}/>)}
           <div>
             <TracksView
               songs={this.state.playlistSongs}
             />
           </div>
+           {/*<RoomForm />*/}
           <Route path="/" exact component={Index} />
           <Route path="/splash/" component={Splash} />
           <Route path="/playlist/" component={Playlist} />

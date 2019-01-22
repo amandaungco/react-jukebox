@@ -16,7 +16,7 @@ class TracksView extends Component {
       // const buttonClass = song.track.id === this.props.songId && !this.props.songPaused ? "fa-pause-circle-o" : "fa-play-circle-o";
       return (
         <tr key={ i }>
-          <th scope="row"><i className="fa fa-check" aria-hidden="true"/></th>
+          <th scope="row"><i onClick= {() => this.props.addSong(song)} className="fa fa-check" aria-hidden="true"/></th>
           <td>{song.name}</td>
           <td>{song.artists[0].name}</td>
           <td>{song.album.name}</td>
