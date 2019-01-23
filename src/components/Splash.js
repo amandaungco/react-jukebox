@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import axios from 'axios';
-
+import {URL} from '../constant'
 import './Splash.css';
-const URL = "http://127.0.0.1:8000/";
+
 
 class Splash extends Component {
 
@@ -26,7 +26,7 @@ class Splash extends Component {
     return (
       <div>
         <div className= 'row justify-content-center'>
-          <button className="button"><a className= "button" href="http://127.0.0.1:8000/callback/">Host Party</a></button>
+          <button className="button"><a className= "button" href="http://django-jukebox.appspot.comcallback/">Host Party</a></button>
         </div>
         <div className= 'row justify-content-center'>
           <button onClick={this.onClickJoinRoom} className="button" type="button">Join Party</button>

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import './PlaylistList.css';
 import TracksView from './TracksView'
-const URL = "http://127.0.0.1:8000/";
+import {URL} from '../constant'
+
 
 class PlaylistList extends Component {
 

@@ -7,6 +7,7 @@ import Splash from './components/Splash';
 import TracksView from './components/TracksView';
 import MainSection2 from './components/MainSection2'
 import RoomForm from './components/RoomForm'
+import {URL} from './constant'
 import axios from 'axios';
 import moment from 'moment';
 
@@ -14,8 +15,6 @@ import moment from 'moment';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-
-const URL = "http://127.0.0.1:8000/";
 
 class App extends Component {
   constructor(props) {

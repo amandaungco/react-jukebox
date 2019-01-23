@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import './MainSection.css';
-const URL = "http://127.0.0.1:8000/";
+import {URL} from '../constant';
+
 
 const MainSection = ({
 
