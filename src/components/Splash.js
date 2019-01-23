@@ -26,7 +26,7 @@ class Splash extends Component {
     return (
       <div>
         <div className= 'row justify-content-center'>
-          <button className="button"><a className= "button" href="http://django-jukebox.appspot.comcallback/">Host Party</a></button>
+          <button className="button"><a className= "button" href={`${URL}/callback/`}>Host Party</a></button>
         </div>
         <div className= 'row justify-content-center'>
           <button onClick={this.onClickJoinRoom} className="button" type="button">Join Party</button>
