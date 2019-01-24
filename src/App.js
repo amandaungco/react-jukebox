@@ -163,6 +163,15 @@ class App extends Component {
       )
       .then((response) => {
         console.log(response);
+        const selectedTrack = this.state.songList.findIndex((track) => {
+          return track.id === song.id
+        });
+
+        this.state.songList.splice(selectedTrack, 1)
+
+        this.setState ({
+          songList: this.state.songList,
+        })
       })
       .catch((error) => {
         this.setState({
