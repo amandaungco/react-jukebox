@@ -38,8 +38,8 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className='track-search-container'>
-        <form onSubmit={this.onSearchSubmit}>
+      <div className='track-search-container d-flex'>
+        <form onSubmit={this.onSearchSubmit} className="p-1 bd-highlight">
 
             <input
               onChange={this.handleSearchChange}
@@ -70,7 +70,11 @@ class SearchBar extends Component {
             <i className="fa fa-search search" aria-hidden="true"/>
           </button>
         </form>
+        <div className="ml-auto">
+          <h2 id="logo">JUKEBOX</h2>
+        </div>
       </div>
+
     );
   }
 }

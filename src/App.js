@@ -6,7 +6,7 @@ import PlaylistList from './components/PlaylistList';
 import Splash from './components/Splash';
 import TracksView from './components/TracksView';
 import MainSection2 from './components/MainSection2'
-import RoomForm from './components/RoomForm'
+import NewRoomForm from './components/NewRoomForm'
 import {URL} from './constant'
 import axios from 'axios';
 import moment from 'moment';
@@ -140,6 +140,13 @@ class App extends Component {
       });
   }
 
+  updateRoomCode = (newRoomCode) => {
+    console.log(newRoomCode);
+    this.setState({
+      roomCode: newRoomCode
+    })
+  }
+
 
 
 
@@ -156,10 +163,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App .bg-dark">
-          <div className='header'>
+
             <SearchBar onSearchSubmitCallback={this.onSearchSubmit} />
-          </div>
-          <h1>{name}</h1>
+
+          <div>
+
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -181,10 +189,11 @@ class App extends Component {
               songs={this.state.playlistSongs}
             />
           </div>
-           {/*<RoomForm />*/}
+          <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />
           <Route path="/" exact component={Index} />
           <Route path="/splash/" component={Splash} />
           <Route path="/playlist/" component={Playlist} />
+          </div>
         </div>
       </Router>
     );

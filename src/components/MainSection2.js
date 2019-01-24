@@ -10,8 +10,8 @@ const MainSection2 = props => (
           </div>
           <div className='pr-4'>
             <p className='playlist-text'>PLAYLIST</p>
-            <h3 className='header-title'>{props.playlist.name}</h3>
-            <p className='created-by'>By <span className='lighter-text'>{props.playlist.owner.display_name}</span></p>
+            <p className='header-title'>{props.playlist.name}</p>
+            <h4 className='created-by'>By <span className='lighter-text'>{props.playlist.owner.display_name}</span></h4>
             <p>{props.playlist.tracks.total} Songs</p>
             <button className="btn btn-green" onClick= {() => props.setPlaylist(props.playlist)}>Set Playlist</button>
           </div>

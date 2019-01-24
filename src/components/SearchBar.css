@@ -1,5 +1,5 @@
 .track-search-container {
-	padding: 1em;
+	padding: .5em;
 }
 
 .track-search-container input {
@@ -31,4 +31,9 @@ button {
 	background: none;
 	border: none;
 	outline: none;
+}
+
+h2#logo {
+  font-family: 'Monoton', Georgia, sans-serif;
+
 }
