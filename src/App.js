@@ -38,33 +38,64 @@ class App extends Component {
 
   getSearch = (value) => {
     console.log(value);
-    axios.get(URL + "search/", {
-      withCredentials: true,
-      params: {
-        q: value.searchValue, // value.q,
-        type: value.type, //value.type,
-      },
-      headers: {'X-spotify-token': window.access_token},
-    }
-      )
-      .then((response) => {
-        const songs = response.data.tracks.items.map((song) => {
-            return { ...song }
+    if (this.state.roomCode === '') {
+      axios.get(URL + "search/", {
+        withCredentials: true,
+        params: {
+          q: value.searchValue, // value.q,
+          type: value.type, //value.type,
+        },
+        headers: {'X-spotify-token': window.access_token},
+      }
+        )
+        .then((response) => {
+          const songs = response.data.tracks.items.map((song) => {
+              return { ...song }
+            });
+
+          this.setState({
+            songList: songs,
+            playlistList: [],
+            playlistSongs: [],
           });
 
-        this.setState({
-          songList: songs,
-          playlistList: [],
-          playlistSongs: [],
+          console.log(songs);
+        })
+        .catch((error) => {
+          this.setState({
+            errorMessage: error.message,
+          });
         });
+    } else {
+      axios.get(URL + "search/", {
+        withCredentials: true,
+        params: {
+          q: value.searchValue, // value.q,
+          type: value.type, //value.type,
+          room_code: this.state.roomCode,
+        }
+      }
+        )
+        .then((response) => {
+          const songs = response.data.tracks.items.map((song) => {
+              return { ...song }
+            });
 
-        console.log(songs);
-      })
-      .catch((error) => {
-        this.setState({
-          errorMessage: error.message,
+          this.setState({
+            songList: songs,
+            playlistList: [],
+            playlistSongs: [],
+          });
+
+          console.log(songs);
+        })
+        .catch((error) => {
+          this.setState({
+            errorMessage: error.message,
+          });
         });
-      });
+    }
+
   }
   getPlaylistSongs = (playlist) => {
     axios.get(URL + "playlist/", {
