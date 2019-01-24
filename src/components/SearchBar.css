@@ -37,3 +37,8 @@ h2#logo {
   font-family: 'Monoton', Georgia, sans-serif;
 
 }
+
+.fa.fa-plus:hover {
+  color: rgba(28, 190, 131, 1);
+
+}

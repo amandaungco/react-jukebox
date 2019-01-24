@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import './SearchBar.css';
 
 
 class TracksView extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      img: 'fa fa-plus',
+    };
+  }
 
   msToMinutesAndSeconds(ms) {
     const minutes = Math.floor(ms / 60000);
@@ -16,7 +25,12 @@ class TracksView extends Component {
       // const buttonClass = song.track.id === this.props.songId && !this.props.songPaused ? "fa-pause-circle-o" : "fa-play-circle-o";
       return (
         <tr key={ i }>
-          <th scope="row"><i onClick= {() => this.props.addSong(song)} className="fa fa-check" aria-hidden="true"/></th>
+          <th scope="row"><i onClick= {() => this.props.addSong(song)}
+                              className={this.state.img}
+                              aria-hidden="true"
+                      
+          />
+          </th>
           <td>{song.name}</td>
           <td>{song.artists[0].name}</td>
           <td>{song.album.name}</td>

@@ -37,8 +37,6 @@ class Splash extends Component {
   }
 }
 
-// Splash.propTypes = {
-//
-// };
+
 
 export default Splash;

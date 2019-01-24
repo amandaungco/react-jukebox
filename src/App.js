@@ -230,7 +230,7 @@ class App extends Component {
             />
           </div>
           <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />
-          <Route path="/" exact component={Index} />
+          <Route path="/" exact component={Splash} />
           <Route path="/splash/" component={Splash} />
           <Route path="/playlist/" component={Playlist} />
           </div>
