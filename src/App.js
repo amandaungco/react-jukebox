@@ -239,7 +239,8 @@ class App extends Component {
             {typeof(this.state.currentPlaylist) !== 'object' ? (null) : (<TracksView
               songs={this.state.playlistSongs}
             />)}
-          </div>
+          </div
+          {console.log(typeof(window.access_token)==="undefined");}
           {console.log((this.state.roomCode === '' || typeof(window.access_token)==="undefined" ))}
           {(this.state.roomCode === '' || this.state.playlistList.length > 0 ) && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
           { (this.state.roomCode !== '') && <aside className="setPlaylist-module d-flex justify-content-end">
