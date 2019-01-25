@@ -240,7 +240,7 @@ class App extends Component {
               songs={this.state.playlistSongs}
             />)}
           </div>
-          {(this.state.roomCode === '' ) && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
+          {(this.state.roomCode === '' || typeof(window.access_token)==="undefined" ) && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
           { (this.state.roomCode !== '') && <aside className="setPlaylist-module d-flex justify-content-end">
             {/*<h6 className="setPlaylist-module__header">Set Playlist:</h6>*/}
             <div>
