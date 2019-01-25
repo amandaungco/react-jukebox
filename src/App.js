@@ -200,14 +200,12 @@ class App extends Component {
           playlistList: [],
           songList: [],
         });
-        console.log(this.state.playlistSongs);
       })
       .catch((error) => {
         this.setState({
           errorMessage: error.message,
         });
       });
-      console.log(this.state.playlistSongs);
   }
 
   onEndParty = () => {
@@ -230,11 +228,11 @@ class App extends Component {
         <div className="App .bg-dark">
             <SearchBar onSearchSubmitCallback={this.onSearchSubmit} />
           <div>
-          <ul>
+          {typeof(window.access_token)!=="undefined" && <ul>
             <li>
               <Link to="/playlist/">Playlists</Link>
             </li>
-          </ul>
+          </ul> }
             {typeof(this.state.currentPlaylist) !== 'object' ? (null) : (<MainSection2 playlist={this.state.currentPlaylist} setPlaylist = {(playlist) => this.setPlaylist(playlist)} />)}
            {this.state.songList.length === 0 ? (null): (<TracksView songs={this.state.songList} addSong={(song) => this.addSong(song)}/>)}
           <div>
