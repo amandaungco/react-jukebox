@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 // import PropTypes from 'prop-types';
 import axios from 'axios';
 import {URL} from '../constant'
@@ -15,13 +14,9 @@ class Splash extends Component {
       .then((response) => {
           console.log(response);
       })
-      .catch((error) => {
-
-      })
   }
 
-  onClickJoinRoom() {
-    console.log('The Join Room was clicked.');
+  onClickJoinRoom = (event) => {
   }
 
   enterRoomCallback = (newRoomCode) => {
@@ -45,6 +40,10 @@ class Splash extends Component {
   }
 }
 
+// Splash.propTypes = {
+//   isFormCallback: PropTypes.func,
+//
+// };
 
 
 export default Splash;

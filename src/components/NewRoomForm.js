@@ -59,7 +59,6 @@ class NewRoomForm extends Component {
 
 NewRoomForm.propTypes = {
   enterRoomCallback: PropTypes.func
-
 };
 
 export default NewRoomForm;

@@ -27,6 +27,7 @@ class App extends Component {
       playlistSongs: [],
       viewType: '',
       roomCode:'',
+      isForm: false,
     };
 
   }
@@ -214,6 +215,13 @@ class App extends Component {
     })
   }
 
+  toggleForm = () => {
+    console.log(this.state.isForm);
+    this.setState({
+      isForm: !this.state.isForm
+    })
+  }
+
 
 
 
@@ -221,6 +229,7 @@ class App extends Component {
     const Index = () => <h2>Home</h2>;
     const Playlist = () => <PlaylistList getPlaylistSongs = {(playlist) => this.getPlaylistSongs(playlist)}/>;
     const Form = () => <NewRoomForm enterRoomCallback = {(newRoomCode) => this.enterRoomCallback(newRoomCode)}/>;
+    // const Spalsh = () => <Splash isFromCallback = {(bool) => this.toggleForm(bool) }/>
 
 
     return (
@@ -240,11 +249,6 @@ class App extends Component {
               songs={this.state.playlistSongs}
             />)}
           </div>
-          {console.log(typeof(window.access_token)==="undefined")}
-          {console.log((this.state.roomCode === '' || typeof(window.access_token)==="undefined" ))}
-          {console.log((this.state.roomCode === '' && typeof(window.access_token)==="undefined" ))}
-          {console.log((this.state.roomCode !== '' || typeof(window.access_token)!=="undefined" ))}
-          {console.log((this.state.roomCode !== '' && typeof(window.access_token)!=="undefined" ))}
           {(this.state.roomCode === '' || this.state.playlistList.length > 0 ) && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
           { (this.state.roomCode !== '') && <aside className="setPlaylist-module d-flex justify-content-end">
             {/*<h6 className="setPlaylist-module__header">Set Playlist:</h6>*/}
