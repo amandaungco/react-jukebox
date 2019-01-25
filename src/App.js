@@ -239,8 +239,8 @@ class App extends Component {
             {typeof(this.state.currentPlaylist) !== 'object' ? (null) : (<TracksView
               songs={this.state.playlistSongs}
             />)}
-          </div
-          {console.log(typeof(window.access_token)==="undefined");}
+          </div>
+          {console.log(typeof(window.access_token)==="undefined")}
           {console.log((this.state.roomCode === '' || typeof(window.access_token)==="undefined" ))}
           {console.log((this.state.roomCode === '' && typeof(window.access_token)==="undefined" ))}
           {console.log((this.state.roomCode !== '' || typeof(window.access_token)!=="undefined" ))}
