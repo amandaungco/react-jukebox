@@ -44,7 +44,7 @@ body {
 /*----PLAYLIST CARD----*/
 .setPlaylist-module {
   font-size: 80%;
-  padding: 1.5rem;
+  padding: 1rem;
   margin: 2rem;
   position: fixed;
   bottom: 0;

@@ -181,10 +181,33 @@ class App extends Component {
   }
 
   updateRoomCode = (newRoomCode) => {
-    console.log(newRoomCode);
     this.setState({
       roomCode: newRoomCode
     })
+    axios.get(URL + "playlist/", {
+      withCredentials: true,
+      params: {
+        room_code: newRoomCode,
+      }
+    }
+      )
+      .then((response) => {
+        const songs = response.data.items.map((song) => {
+            return { ...song.track }
+          });
+        this.setState({
+          playlistSongs: songs,
+          playlistList: [],
+          songList: [],
+        });
+        console.log(this.state.playlistSongs);
+      })
+      .catch((error) => {
+        this.setState({
+          errorMessage: error.message,
+        });
+      });
+      console.log(this.state.playlistSongs);
   }
 
   onEndParty = () => {
@@ -219,7 +242,7 @@ class App extends Component {
               songs={this.state.playlistSongs}
             />)}
           </div>
-          {(this.state.roomCode === '') && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
+          {(this.state.roomCode === '' ) && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
           { (this.state.roomCode !== '') && <aside className="setPlaylist-module d-flex justify-content-end">
             {/*<h6 className="setPlaylist-module__header">Set Playlist:</h6>*/}
             <div>
@@ -229,10 +252,6 @@ class App extends Component {
                   <strong>{this.state.roomCode.toUpperCase()}</strong> :
                   <Link to="/playlist/">Select Playlist <i className='fas fa-compact-disc'/></Link>
                 }
-
-                {/*<button className="btn btn-green" onClick={() => {this.onEndParty()}}>
-                  End Party
-                </button>*/}
               </div>
             </div>
           </aside>}
