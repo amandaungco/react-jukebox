@@ -27,7 +27,7 @@ class App extends Component {
       playlistSongs: [],
       viewType: '',
       roomCode:'',
-      isForm: false,
+      isForm: true,
     };
 
   }
@@ -58,6 +58,7 @@ class App extends Component {
             songList: songs,
             playlistList: [],
             playlistSongs: [],
+            isForm: false,
           });
 
           console.log(songs);
@@ -86,6 +87,7 @@ class App extends Component {
             songList: songs,
             playlistList: [],
             playlistSongs: [],
+            isForm: false,
           });
 
           console.log(songs);
@@ -116,6 +118,7 @@ class App extends Component {
           playlistSongs: songs,
           playlistList: [],
           songList: [],
+          isForm: false,
         });
         console.log('was the state set?');
         console.log(this.state.currentPlaylist);
@@ -249,7 +252,7 @@ class App extends Component {
               songs={this.state.playlistSongs}
             />)}
           </div>
-          {(this.state.roomCode === '' || this.state.playlistList.length > 0 ) && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
+          {(this.state.roomCode === '' || this.state.isForm === true ) && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
           { (this.state.roomCode !== '') && <aside className="setPlaylist-module d-flex justify-content-end">
             {/*<h6 className="setPlaylist-module__header">Set Playlist:</h6>*/}
             <div>
