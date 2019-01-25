@@ -187,51 +187,56 @@ class App extends Component {
     })
   }
 
+  onEndParty = () => {
+    this.setState ({
+      roomCode: ''
+    })
+  }
+
 
 
 
   render() {
     const Index = () => <h2>Home</h2>;
     const Playlist = () => <PlaylistList getPlaylistSongs = {(playlist) => this.getPlaylistSongs(playlist)}/>;
+    const Form = () => <NewRoomForm enterRoomCallback = {(newRoomCode) => this.enterRoomCallback(newRoomCode)}/>;
 
-    // const playlistTracks = this.state.playlistSongs.map((track) => {
-    //   console.log(track)
-    //   return
-    // })
 
-    let name = "Jukebox"
     return (
       <Router>
         <div className="App .bg-dark">
-
             <SearchBar onSearchSubmitCallback={this.onSearchSubmit} />
-
           <div>
-
           <ul>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/splash/">Splash</Link>
-            </li>
-            <li>
               <Link to="/playlist/">Playlists</Link>
-            </li>
-            <li>
-              {this.state.roomCode}
             </li>
           </ul>
             {typeof(this.state.currentPlaylist) !== 'object' ? (null) : (<MainSection2 playlist={this.state.currentPlaylist} setPlaylist = {(playlist) => this.setPlaylist(playlist)} />)}
            {this.state.songList.length === 0 ? (null): (<TracksView songs={this.state.songList} addSong={(song) => this.addSong(song)}/>)}
           <div>
-            <TracksView
+            {typeof(this.state.currentPlaylist) !== 'object' ? (null) : (<TracksView
               songs={this.state.playlistSongs}
-            />
+            />)}
           </div>
-          <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />
+          {(this.state.roomCode === '') && <NewRoomForm enterRoomCallback={(newRoomCode) => this.updateRoomCode(newRoomCode)} />}
+          { (this.state.roomCode !== '') && <aside className="setPlaylist-module d-flex justify-content-end">
+            {/*<h6 className="setPlaylist-module__header">Set Playlist:</h6>*/}
+            <div>
+              <div className="setPlaylist-module__code pl-2">
+                Room Code:<br />
+                { this.state.roomCode ?
+                  <strong>{this.state.roomCode.toUpperCase()}</strong> :
+                  <Link to="/playlist/">Select Playlist <i className='fas fa-compact-disc'/></Link>
+                }
+
+                {/*<button className="btn btn-green" onClick={() => {this.onEndParty()}}>
+                  End Party
+                </button>*/}
+              </div>
+            </div>
+          </aside>}
           <Route path="/" exact component={Splash} />
-          <Route path="/splash/" component={Splash} />
           <Route path="/playlist/" component={Playlist} />
           </div>
         </div>

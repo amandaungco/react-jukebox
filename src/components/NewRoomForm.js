@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {URL} from '../constant'
+import './NewRoomForm.css';
 // import './RoomForm.css';
 
 class NewRoomForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      code1: '',
-      code2: '',
-      code3: '',
-      code4: '',
-      code5: '',
-      code6: '',
       roomCode: '',
     };
   }
@@ -39,25 +35,23 @@ class NewRoomForm extends Component {
 
   render() {
     return (
-
-      <form onSubmit={this.handleSubmit}>
-      <label htmlFor="Room_Code">
-        Room Code:
-      </label>
-        <div className='row'>
-          <div className="form-group col-2">
-            <input type="text" value={this.state.roomCode} onChange={this.onFormChange} name="roomCode" className="form-control" maxLength={6} pattern="^[a-zA-Z0-9]{6}" />
-          </div>
+      <div className="p-5">
+      <form className="text-center border border-light p-5 roomForm" onSubmit={this.handleSubmit}>
+        <p className="h4 mb-4">
+          Enter Room Code
+        </p>
+        <div className="form-group mb-4">
+          <input type="text" value={this.state.roomCode} onChange={this.onFormChange} name="roomCode" className="form-control" maxLength={6} pattern="^[a-zA-Z0-9]{6}" />
         </div>
-
-        <div className="form-group">
-          <input type="submit" className="form-control-md" value="Submit" onSubmit={this.handleSubmit}/>
-        </div>
-
-        <small id="passwordHelpBlock" className="form-text text-muted">
-          Room code is only 6 Characters long e.g. "AAA123"
+        <small id="passwordHelpBlock" className="form-text text-muted mb-4">
+          Room code can only be letters or numbers e.g. "AAA123"
         </small>
-      </form>
+        <div className="form-group">
+          <input type="submit" className="form-control" value="Submit" onSubmit={this.handleSubmit}/>
+        </div>
+        <p>Want to host? <a href={`${URL}callback/`}>Login to Spotify <i className='fa fa-spotify'/></a></p>
+        </form>
+      </div>
 
     );
   }

@@ -13,13 +13,16 @@ class SearchBar extends Component {
       searchValue: '',
       type: 'track',
     };
-
-    // this.handleTypeChange = this.handleTypeChange.bind(this);
-    // this.onSearchSubmit = this.onSearchSubmit.bind(this);
   }
   handleTypeChange = (event) => {
     this.setState({
       type: event.target.value,
+    });
+  }
+
+  resetState = () => {
+    this.setState({
+      searchValue: '',
     });
   }
 
@@ -30,8 +33,9 @@ class SearchBar extends Component {
   }
 
   onSearchSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     this.props.onSearchSubmitCallback(this.state);
+    this.resetState();
   }
 
 
@@ -49,23 +53,6 @@ class SearchBar extends Component {
               placeholder="Search..."
               id ="Search"
             />
-
-
-        {/*
-        <div className="form-group">
-          <label forhtml="search-type">Type</label>
-
-          <select className="form-control" id="type" value={this.state.type} onChange={this.handleTypeChange}>
-
-            <option value="track">Track</option>
-            <option value="artist">Artist</option>
-            <option value="album">Album</option>
-            <option value="playlist">Playlist</option>
-
-          </select> }
-
-        </div>
-        */}
           <button onClick={this.onSearchSubmit}>
             <i className="fa fa-search search" aria-hidden="true"/>
           </button>

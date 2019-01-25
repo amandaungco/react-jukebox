@@ -40,3 +40,48 @@ body {
   top: 50px;
   padding-bottom: 100px;
 }
+
+/*----PLAYLIST CARD----*/
+.setPlaylist-module {
+  font-size: 80%;
+  padding: 1.5rem;
+  margin: 2rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #eaeaea;
+  width: 11em;
+  color: black;
+}
+
+.setPlaylist-module__header {
+  margin-bottom: 1rem;
+  color: black;
+}
+.setPlaylist-module__movie {
+  width: 75px;
+  height: 115px;
+  color: black;
+}
+
+.setPlaylist-module__image {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.setPlaylist-module__code {
+  border-left:1px solid #000;
+  height: 3em;
+}
+.setPlaylist-module__image--placeholder {
+  width: 50px;
+  height: 50px;
+  background-color: #fafafa;
+  text-align: center;
+  border: 2px dotted #cacaca;
+  border-radius: 5px;
+  padding-top: 30px;
+}

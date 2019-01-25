@@ -1,0 +1,11 @@
+
+.roomForm {
+  border-radius: 2em;
+}
+p > a {
+  color:rgba(28, 190, 131, 1)
+}
+
+.form_control {
+  max-width: 370px;
+}
