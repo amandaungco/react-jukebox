@@ -29,21 +29,20 @@ Include logo/demo screenshot etc.
 - [PostgreSQL](https://www.postgresql.org/)
 
 ## Features
-What makes your project stand out?
-
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+By having one user login they can share a room-code with friends to enter on the same url and they will be able to contribute to a single playlist
 
 ## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+To download and edit this project:
 
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## How to use?
-
-In the project directory, you can run:
+1) Clone this repository:
+```
+git clone https://github.com/danimetz/react-jukebox.git
+```
+2) In the project directory, you can install dependencies:
+```
+npm install
+```
+3)In the project directory, you can run:
 
 ### `npm start`
 
@@ -52,6 +51,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+4) In order to get full functionality the backend API will need to also be cloned and running, please see [Jukebox_API](https://github.com/danimetz/Jukebox_API)
+
+## How to use?
+
+
 
 ## Contribute
 
