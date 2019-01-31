@@ -7,26 +7,18 @@ This project will connect with a django backend to use the spotify API to help u
 Have you ever had a song request that you want your friends to play but couldn't do it because the phone connected to the speaker was locked? Or maybe you needed to download an application, well with Jukebox you can collaborate on a single spotify playlist to queue up the next song!
 
 This is a Capstone project for [Ada Developers Academy](https://www.adadevelopersacademy.org/).
-
-## Build status
-Build status of continus integration i.e. travis, appveyor etc. Ex. - 
-
-[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
-
-## Code style
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
  
 ## Screenshots
-Include logo/demo screenshot etc.
+* <b>Mobile:</b>     
+
+![Login Screen](/react-jukebox/public/images/capstone_login.png?raw=true)
 
 ## Tech/framework used
 <b>Built with</b>
 - [React](https://reactjs.org/) (This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).)
 - [Django/Python](https://www.djangoproject.com/)
 - [PostgreSQL](https://www.postgresql.org/)
+
 
 ## Features
 By having one user login they can share a room-code with friends to enter on the same url and they will be able to contribute to a single playlist
