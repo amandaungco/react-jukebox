@@ -35,10 +35,10 @@ git clone https://github.com/danimetz/react-jukebox.git
 ```
 npm install
 ```
-3)In the project directory, you can run:
-
-### `npm start`
-
+3) In the project directory, you can run:
+```
+npm start
+```
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -48,7 +48,21 @@ You will also see any lint errors in the console.
 4) In order to get full functionality the backend API will need to also be cloned and running, please see [Jukebox_API](https://github.com/danimetz/Jukebox_API)
 
 ## How to use?
-
+* To be a Host
+  * Click Host Party button or Login with Spotify button to login as the host.
+  * The page will be redirected to Spotify where the user will use their spotify credentials to login.
+  * Once redirected back to the home page of the web-app the user can select "Playlists".
+  * All the users Spotify playlists will load.
+  * Any of the plalists can be clicked to view the songs in the playlist.
+  * Once the desired playlist has been found you can set the playlist by clicking the "Set Playlist" button. 
+  * A room code will generate and pop up in the bottom right corner of the screen. 
+  * Pass out the code to guests and they can login to add music to the playlist!
+* To be a Guest
+  * Login by typing in the Room Code for a given party playlist.
+  * Search songs by typing songs in the search bar and clicking the search icon.
+  * Click the plus sign next to a song to add it to the party playlist, the song will disappear from the search results once it has been successfully added
+  * Keep searching and adding songs to the playslist!
+  * 
 
 
 ## Contribute
@@ -56,5 +70,5 @@ You will also see any lint errors in the console.
 Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
 
 ## Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project. 
+Icons made by [Material](https://material.io/) from [Icons - Material Design](https://material.io/tools/icons/?style=baseline), licensed by [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html), 
 
