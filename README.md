@@ -11,7 +11,7 @@ This is a Capstone project for [Ada Developers Academy](https://www.adadeveloper
 ## Screenshots
 * <b>Mobile:</b>     
 
-![Login Screen](/react-jukebox/public/images/capstone_login.png?raw=true)
+![Login Screen](/public/images/capstone_login.png?raw=true)
 
 ## Tech/framework used
 <b>Built with</b>
