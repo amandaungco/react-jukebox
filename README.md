@@ -1,8 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-jukebox
 
-## Available Scripts
+## REACT - JUKEBOX
+This project will connect with a django backend to use the spotify API to help user collaborate on a single spotify playlist.
+## Motivation
 
-In the project directory, you can run:
+Have you ever had a song request that you want your friends to play but couldn't do it because the phone connected to the speaker was locked? Or maybe you needed to download an application, well with Jukebox you can collaborate on a single spotify playlist to queue up the next song!
+
+This is a Capstone project for [Ada Developers Academy](https://www.adadevelopersacademy.org/).
+ 
+## Screenshots
+* <b>Mobile:</b>     
+
+![Login Screen](/react-jukebox/public/images/capstone_login.png?raw=true)
+
+## Tech/framework used
+<b>Built with</b>
+- [React](https://reactjs.org/) (This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).)
+- [Django/Python](https://www.djangoproject.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+
+## Features
+By having one user login they can share a room-code with friends to enter on the same url and they will be able to contribute to a single playlist
+
+## Installation
+To download and edit this project:
+
+1) Clone this repository:
+```
+git clone https://github.com/danimetz/react-jukebox.git
+```
+2) In the project directory, you can install dependencies:
+```
+npm install
+```
+3)In the project directory, you can run:
 
 ### `npm start`
 
@@ -12,58 +44,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+4) In order to get full functionality the backend API will need to also be cloned and running, please see [Jukebox_API](https://github.com/danimetz/Jukebox_API)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to use?
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Contribute
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
 
-### `npm run eject`
+## Credits
+Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# react-jukebox
