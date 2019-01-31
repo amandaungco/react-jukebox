@@ -11,7 +11,7 @@ This is a Capstone project for [Ada Developers Academy](https://www.adadeveloper
 ## Screenshots
 * <b>Mobile:</b>     
 
-![Login Screen](/public/images/capstone_login.png?raw=true) ![Playlist_List](/public/images/capstone_playlistList.png?raw=true) ![Playlist](/public/images/capstone_playlist.png?raw=true) ![Set_Playlist](/public/images/capstone_setPlaylist.png?raw=true)
+![Login Screen](/public/images/capstone_login.png?raw=true)<!-- .element height="50%" width="50%" --> ![Playlist_List](/public/images/capstone_playlistList.png?raw=true) ![Playlist](/public/images/capstone_playlist.png?raw=true) ![Set_Playlist](/public/images/capstone_setPlaylist.png?raw=true)
 
 
 ## Tech/framework used
