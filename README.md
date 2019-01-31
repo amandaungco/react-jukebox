@@ -62,12 +62,7 @@ You will also see any lint errors in the console.
   * Search songs by typing songs in the search bar and clicking the search icon.
   * Click the plus sign next to a song to add it to the party playlist, the song will disappear from the search results once it has been successfully added
   * Keep searching and adding songs to the playslist!
-  * 
 
-
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
 
 ## Credits
 Icons made by [Material](https://material.io/) from [Icons - Material Design](https://material.io/tools/icons/?style=baseline), licensed by [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html), 
