@@ -7,6 +7,8 @@ This project will connect with a django backend to use the spotify API to help u
 Have you ever had a song request that you want your friends to play but couldn't do it because the phone connected to the speaker was locked? Or maybe you needed to download an application, well with Jukebox you can collaborate on a single spotify playlist to queue up the next song!
 
 This is a Capstone project for [Ada Developers Academy](https://www.adadevelopersacademy.org/).
+
+See the React front end hosted on Heroku, [Ada Jukebox](https://ada-jukebox.herokuapp.com/).
  
 ## Screenshots
 * <b>Mobile:</b>     
